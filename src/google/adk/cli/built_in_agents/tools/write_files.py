@@ -51,7 +51,7 @@ async def write_files(
         - file_size: size of written file in bytes
         - existed_before: bool indicating if file existed before write
         - backup_created: bool indicating if backup was created
-        - backup_path: path to backup file if created
+        - backup_path: path to back up file if created
         - error: error message if write failed for this file
       - successful_writes: number of files written successfully
       - total_files: total number of files requested

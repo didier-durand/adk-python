@@ -714,7 +714,7 @@ class Runner:
       # identified by checking if the transcription event is partial. When
       # the next transcription event is not partial, it means the previous
       # transcription is finished. Then if there is any buffered function
-      # call event, we should append them after this finished(non-parital)
+      # call event, we should append them after this finished(non-partial)
       # transcription event.
       buffered_events: list[Event] = []
       is_transcribing: bool = False
@@ -730,7 +730,7 @@ class Runner:
               buffered_events.append(event)
               continue
             # Note for live/bidi: for audio response, it's considered as
-            # non-paritla event(event.partial=None)
+            # non-partial event(event.partial=None)
             # event.partial=False and event.partial=None are considered as
             # non-partial event; event.partial=True is considered as partial
             # event.
@@ -870,7 +870,7 @@ class Runner:
     **Events Yielded to Callers:**
     *   **Live Model Audio Events with Inline Data:** Events containing raw
         audio `Blob` data(`inline_data`).
-    *   **Live Model Audio Events with File Data:** Both input and ouput audio
+    *   **Live Model Audio Events with File Data:** Both input and output audio
         data are aggregated into a audio file saved into artifacts. The
         reference to the file is saved in the event as `file_data`.
     *   **Usage Metadata:** Events containing token usage.

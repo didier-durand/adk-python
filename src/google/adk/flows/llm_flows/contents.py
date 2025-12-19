@@ -220,7 +220,7 @@ def _rearrange_events_for_latest_function_response(
 
 
 def _is_part_invisible(p: types.Part) -> bool:
-  """A part is considered invisble if it's a thought, or has no visible content."""
+  """A part is considered invisible if it's a thought, or has no visible content."""
   return getattr(p, 'thought', False) or not (
       p.text
       or p.inline_data
